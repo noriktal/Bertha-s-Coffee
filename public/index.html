@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Memory Tarots</title>
+        <link href= "game-style.css" type="text/css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/c27e5d5c2c.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="images/bertha-favicon.png" type="image/png" sizes="20x20">
+        
+    </head>
+    
+    <body>
+        
+        <div id="top-bar"> 
+            <div id="topbar-container">
+            
+            
+                <div id="admin-div" class="admin">
+                    <i class="fas fa-user-cog admin" id="admin-icon"></i>
+                    <form id="admin-form" method="post">
+                        <div id="opened-form2">
+                            <i>X</i>
+                            <h5> מינוי לאדמין</h5>
+                            <label for="email2">אימייל: </label>
+                            <input type="email" id="email2" name="email2" required>
+                            <input type="submit" value=">" id="admin-btn">
+                            <span id="response2"></span>
+                        </div>
+                    </form>
+                </div>
+
+
+                <i class="fas fa-sign-out-alt" id="logout-btn"></i>
+
+                <div id="login-div">
+                    <i class="fas fa-sign-in-alt" id="login-icon"></i>
+                    <form id="login-form" method="post">
+                        <div id="opened-form1">
+                            <i>X</i>
+                            <h5> כניסה לרשומים</h5>
+                            <label for="email1">אימייל: </label>
+                            <input type="email" id="email1" name="email1" required>
+                            <label for="password1">סיסמה:</label>
+                            <input type="password" id="password1" name="password1" placeholder="שישה תווים לפחות" required>
+                            <input type="submit" value=">" id="login-btn">
+                            <span id="response1"></span>
+                        </div>
+                    </form>
+                </div>
+
+                <form id="username-form" method="post">
+                        <div id="upper-form">
+                            <label for="username">פעם ראשונה כאן? מי אדוני\גבירתי?</label>
+                            <input type="text" id="username" name="username" maxlength="14" size="14" placeholder="שם משתמש\ת" required>
+                        </div>
+                        <div id="opened-form">
+                            <i>X</i>
+                            <h5> הרשמה דורשת גם:</h5>
+                            <label for="email">אימייל: </label>
+                            <input type="email" id="email" name="email" required>
+                            <label for="password">סיסמה:</label>
+                            <input type="password" id="password" name="password" placeholder="שישה תווים לפחות" required>
+                            <input type="submit" value=">">
+                            <span id="response"></span>
+                        </div>
+                </form>
+                
+                
+                <div id="current-user" class="d-none">
+                    <span id="current-name"></span>
+                    <span id="admin-badge"></span>
+                </div>
+
+                <div id="game-size-div">
+                    <label for="game-size">רמת משחק:</label>
+                    <select name="game-size" id="game-size">
+                        <option value="game-small" id="game-small" selected>קפה טורקי</option>
+                        <option value="game-medium" id="game-medium">אספרסו קצר</option>
+                    </select>
+                </div>
+
+                <span id="record" class="d-none large"></span>
+                
+                <button type="button" id="newGame">
+                    <span> משחק חדש</span>
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+
+            
+            </div>
+        </div>
+
+        <div id="championship">
+            <h4>מי אלוף של ברטה:</h4>
+            <div id="champion"></div>
+        </div>
+        
+        <h1 id="title"> בחנו את זכרונכם אצל ברטה!</h1>
+        
+        <form id="username-form3" method="post">
+            <div id="opened-form3">
+                <i>X</i>
+                <br/>
+                <br/>
+                <h5> הצטרפו לחברים של ברטה, שמרו שיאים אישיים ונסו להשיג את האליפות!</h5>
+                <span id="user-time"></span>
+                <span id="user-date"></span>
+                <label for="username"> מי אדוני\גבירתי?</label>
+                <input type="text" id="username3" name="username3" maxlength="14" size="14" placeholder="שם משתמש\ת" required>
+                <label for="email3">אימייל: </label>
+                <input type="email" id="email3" name="email3" required>
+                <label for="password3">סיסמה:</label>
+                <input type="password" id="password3" name="password3" placeholder="שישה תווים לפחות" required>
+                <input type="submit" value=">">
+                <span id="response3"></span>
+            </div>
+        </form>
+
+        <div class="main main1">
+            
+            <div class="onside" id="onside1">
+
+                <div class="seance-board">
+                    <p class="messages"></p>
+                    <img src="images/seance-board-better.jpg">
+                </div>
+                
+                <div class="counter-clock">
+                </div>
+                
+                <div class="stopwatch">
+                    <p class="stopwatch-view"></p>
+                </div>
+                
+            </div>
+            
+            <div class="onside" id="onside2">
+                <img src="images/coffee-mark1.png">
+                <img src="images/coffee-mark2.png">
+            </div>
+            
+            <div class="board" id="board1">
+                
+                <div class="card-place" id="card1-1">
+                  <div class="flip-card-inner" id="card1-inner">
+                    <div class="flip-card-front" id="card1-front"> </div>
+                    <div class="flip-card-back" id="card1-back">
+                        <img src="images/fire-card300.jpg">
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card-place" id="card2-1">
+                    <div class="flip-card-inner" id="card2-inner">
+                        <div class="flip-card-front" id="card2-front"> </div>
+                        <div class="flip-card-back" id="card2-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card3-1">
+                    <div class="flip-card-inner" id="card3-inner">
+                        <div class="flip-card-front" id="card3-front"></div>
+                        <div class="flip-card-back" id="card3-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card4-1">
+                    <div class="flip-card-inner" id="card4-inner">
+                        <div class="flip-card-front" id="card4-front"></div>
+                        <div class="flip-card-back" id="card4-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card5-2">
+                    <div class="flip-card-inner" id="card5-inner">
+                        <div class="flip-card-front" id="card5-front"></div>
+                        <div class="flip-card-back" id="card5-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card6-2">
+                    <div class="flip-card-inner" id="card6-inner">
+                        <div class="flip-card-front" id="card6-front"></div>
+                        <div class="flip-card-back" id="card6-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card7-2">
+                    <div class="flip-card-inner" id="card7-inner">
+                        <div class="flip-card-front" id="card7-front"></div>
+                        <div class="flip-card-back" id="card7-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card8-2">
+                    <div class="flip-card-inner" id="card8-inner">
+                        <div class="flip-card-front" id="card8-front"></div>
+                        <div class="flip-card-back" id="card8-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card9-3">
+                    <div class="flip-card-inner" id="card9-inner">
+                        <div class="flip-card-front" id="card9-front"></div>
+                        <div class="flip-card-back" id="card9-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card10-3">
+                    <div class="flip-card-inner" id="card10-inner">
+                        <div class="flip-card-front" id="card10-front"></div>
+                        <div class="flip-card-back" id="card10-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card11-3">
+                    <div class="flip-card-inner" id="card11-inner">
+                        <div class="flip-card-front" id="card11-front"></div>
+                        <div class="flip-card-back" id="card11-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-place" id="card12-3">
+                    <div class="flip-card-inner" id="card12-inner">
+                        <div class="flip-card-front" id="card12-front"></div>
+                        <div class="flip-card-back" id="card12-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    
+        <!--medium size board-->
+
+        <div class="main main2 not-selected"> 
+
+            <div class="onside" id="onside3">
+
+                    <div class="seance-board">
+                        <p class="messages"></p>
+                        <img src="images/seance-board-better.jpg">
+                    </div>
+                    
+                    <div class="counter-clock">
+                    </div>
+                    
+                    <div class="stopwatch">
+                        <p class="stopwatch-view"></p>
+                    </div> 
+
+            </div>
+
+            <div class="board" id="board2">
+                    
+                <div class="cardm-place" id="cardm1-1">
+                <div class="flip-cardm-inner" id="cardm1-inner">
+                    <div class="flip-cardm-front" id="cardm1-front"> </div>
+                    <div class="flip-cardm-back" id="cardm1-back">
+                        <img src="images/fire-card300.jpg">
+                    </div>
+                </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm2-1">
+                    <div class="flip-cardm-inner" id="cardm2-inner">
+                        <div class="flip-cardm-front" id="cardm2-front"> </div>
+                        <div class="flip-cardm-back" id="cardm2-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm3-1">
+                    <div class="flip-cardm-inner" id="cardm3-inner">
+                        <div class="flip-cardm-front" id="cardm3-front"></div>
+                        <div class="flip-cardm-back" id="cardm3-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm4-1">
+                    <div class="flip-cardm-inner" id="cardm4-inner">
+                        <div class="flip-cardm-front" id="cardm4-front"></div>
+                        <div class="flip-cardm-back" id="cardm4-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm5-1">
+                    <div class="flip-cardm-inner" id="cardm5-inner">
+                        <div class="flip-cardm-front" id="cardm5-front"></div>
+                        <div class="flip-cardm-back" id="cardm5-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm6-1">
+                    <div class="flip-cardm-inner" id="cardm6-inner">
+                        <div class="flip-cardm-front" id="cardm6-front"></div>
+                        <div class="flip-cardm-back" id="cardm6-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm7-2">
+                    <div class="flip-cardm-inner" id="cardm7-inner">
+                        <div class="flip-cardm-front" id="cardm7-front"></div>
+                        <div class="flip-cardm-back" id="cardm7-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm8-2">
+                    <div class="flip-cardm-inner" id="cardm8-inner">
+                        <div class="flip-cardm-front" id="cardm8-front"></div>
+                        <div class="flip-cardm-back" id="cardm8-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm9-2">
+                    <div class="flip-cardm-inner" id="cardm9-inner">
+                        <div class="flip-cardm-front" id="cardm9-front"></div>
+                        <div class="flip-cardm-back" id="cardm9-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm10-2">
+                    <div class="flip-cardm-inner" id="cardm10-inner">
+                        <div class="flip-cardm-front" id="cardm10-front"></div>
+                        <div class="flip-cardm-back" id="cardm10-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm11-2">
+                    <div class="flip-cardm-inner" id="cardm11-inner">
+                        <div class="flip-cardm-front" id="cardm11-front"></div>
+                        <div class="flip-cardm-back" id="cardm11-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm12-2">
+                    <div class="flip-cardm-inner" id="cardm12-inner">
+                        <div class="flip-cardm-front" id="cardm12-front"></div>
+                        <div class="flip-cardm-back" id="cardm12-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardm-place" id="cardm13-3">
+                    <div class="flip-cardm-inner" id="cardm13-inner">
+                        <div class="flip-cardm-front" id="cardm13-front"></div>
+                        <div class="flip-cardm-back" id="cardm13-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardm-place" id="cardm14-3">
+                    <div class="flip-cardm-inner" id="cardm14-inner">
+                        <div class="flip-cardm-front" id="cardm14-front"></div>
+                        <div class="flip-cardm-back" id="cardm14-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardm-place" id="cardm15-3">
+                    <div class="flip-cardm-inner" id="cardm15-inner">
+                        <div class="flip-cardm-front" id="cardm15-front"></div>
+                        <div class="flip-cardm-back" id="cardm15-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardm-place" id="cardm16-3">
+                    <div class="flip-cardm-inner" id="cardm16-inner">
+                        <div class="flip-cardm-front" id="cardm16-front"></div>
+                        <div class="flip-cardm-back" id="cardm16-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardm-place" id="cardm17-3">
+                    <div class="flip-cardm-inner" id="cardm17-inner">
+                        <div class="flip-cardm-front" id="cardm17-front"></div>
+                        <div class="flip-cardm-back" id="cardm17-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardm-place" id="cardm18-3">
+                    <div class="flip-cardm-inner" id="cardm18-inner">
+                        <div class="flip-cardm-front" id="cardm18-front"></div>
+                        <div class="flip-cardm-back" id="cardm18-back">
+                            <img src="images/fire-card300.jpg">
+                        </div>
+                    </div>
+                </div>
+
+            </div>      
+        </div>
+        
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+  apiKey: "AIzaSyBUeFefG_KvpkZ7GAytgz6F324B01-p6LU",
+  authDomain: "bertha-s-coffee.firebaseapp.com",
+  projectId: "bertha-s-coffee",
+  storageBucket: "bertha-s-coffee.appspot.com",
+  messagingSenderId: "820574864286",
+  appId: "1:820574864286:web:4cb575d26cd203f6020c8f",
+  measurementId: "G-FN20DWKRNE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // auth, firestore and functions references
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  db.settings({ ignoreUndefinedProperties: true });
+  const functions = firebase.functions();
+  const analytics = firebase.analytics();
+</script>
+<!--Just for Confetti effect-->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<!--My JS code-->
+        <script src="game-script.js"></script>
+    </body>
+</html>

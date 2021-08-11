@@ -1,0 +1,1262 @@
+:root {
+    --gold: #E9C551;
+    --brown: #530D00; /*rgb(83, 13, 0)*/
+    --blue: #738ba8;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    max-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-image: url(images/marble-bg-large.jpg);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size:cover;
+    position: relative;
+}
+
+@media screen and (max-width: 900px){
+
+    body{
+       max-height: none;
+    }
+}
+
+h1 {
+    font-family: "Suez One", "Frank Ruhl";
+    font-size: 37px;
+    text-align: center;
+    color: var(--brown);
+    text-shadow: 4px 8px 8px var(--gold);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1000px)  {
+
+    h1 {
+        font-size: 31px;
+    }
+}
+
+@media screen and (max-width: 400px)  {
+
+    h1 {
+        font-size: 27px;
+    }
+}
+
+/* top bar */
+
+#top-bar {
+    width:100vw;
+    background-color: var(--gold);
+    
+}
+
+#topbar-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:15px;
+    padding-right: 15px;
+}
+
+.fas{
+    color: var(--brown);
+    font-size: 20px;
+    padding: 3px;
+}
+
+.fa-user-cog{
+    margin-left: 20px;
+}
+
+.fa-sign-in-alt{
+    margin-left: 20px;
+}
+
+.fas:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#username-form {
+    position: relative;
+}
+
+@media screen and (max-width: 880px){
+    #username-form #upper-form label {
+
+        display: none;
+    }
+
+}
+
+#admin-div{
+    display: none;
+}
+
+#opened-form, #opened-form1, #opened-form2, #opened-form3 {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue);
+    padding: 8px;
+    box-shadow: 2px 2px 3px black;
+    border-radius: 7px;
+    top: 40px;
+    width: fit-content;
+    opacity: 0;
+    transition: opacity 800ms;
+}
+
+#opened-form {
+    left: 10px;
+}
+
+#opened-form1{
+    right: 30px;
+}
+
+#opened-form2{
+    right: 30px;
+}
+
+#opened-form3{
+    top: 100px;
+    left: 20%;
+    color: var(--gold);
+}
+
+@media screen and (max-width:950px){
+    #opened-form3{
+    left: 10%;
+    max-width: 85vw;
+    }
+}
+
+@media screen and (max-width:950px){
+    #opened-form3{
+    left: 12px;
+    max-width: 85vw;
+    }
+}
+
+#opened-form h5, #opened-form1 h5, #opened-form2 h5, #opened-form3 h5 {
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 0 5px 0;
+    font-family: "Suez One", "Frank Ruhl";
+}
+
+#opened-form3 h5 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+}
+
+#opened-form i, #opened-form1 i, #opened-form2 i, #opened-form3 i{
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    border-radius: 50%;
+    position: absolute;
+    left: 13px;
+}
+
+#opened-form i:hover, #opened-form1 i:hover, #opened-form2 i:hover, #opened-form3 i:hover {
+    cursor: pointer;
+    color: var(--brown);
+}
+
+#opened-form label, #opened-form1 label, #opened-form2 label, #opened-form3 label{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: var(--gold);
+    letter-spacing: 2px;
+
+}
+
+label {
+    font-family: "Suez One", "Frank Ruhl";
+    color: var(--brown);
+    font-size: 18px;
+    margin-left: 12px;
+}
+
+#opened-form3 label {
+    color: var(--gold);
+}
+
+select, input {
+    border: 2px solid white;
+   
+    font-family: "Suez One", "Frank Ruhl";
+    color: var(--brown);
+    background-color: var(--gold);
+    font-size: 17px;
+    border-radius: 3%;
+    margin-left: 12px;
+}
+
+select{
+    z-index:4;
+}
+
+select:focus, input:focus {
+
+    outline: none;
+    border: 2px solid var(--brown);
+}
+
+ @media screen and (max-width: 700px) { 
+    
+    #game-size-div label{
+        display:none;
+    }
+ }
+
+ #game-size-div{
+     z-index: 3;
+ }
+
+input[type="submit"] {
+
+    border-radius: 50%;
+    background-color: white;
+    color:transparent;
+    background-image:url("images/hamsa.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin-right: 5px;
+    box-shadow: 1px 1px 2px var(--brown);
+    width: fit-content;
+    align-self: center;
+    margin-top: 12px;
+}
+
+input::placeholder {
+    color: rgba(83, 13, 0, 0.5);
+}
+
+input[type="submit"]:hover {
+
+    box-shadow: 0.5px 0.5px 1px var(--brown);
+    cursor: pointer;
+
+}
+
+
+option:hover {
+    background-color: var(--brown) !important;
+}
+
+#response, #response1, #response2, #response3 {
+    direction: ltr;
+    font-family: Arial;
+    color: #760404;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 5px;
+    max-width: 300px;
+}
+
+#user-time, #user-date {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px auto;
+    font-family: "Suez One", "Frank Ruhl";
+}
+
+
+#newGame {
+    background-color: var(--brown);
+    border: none;
+    font-family: "Suez One", "Frank Ruhl";
+    color: var(--gold);
+    font-size: 20px;
+    border-radius: 5%;
+    padding: 7px 20px;
+    box-shadow: 2px 2px 3px black;
+    margin-right: 22px;
+}
+
+
+#newGame:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 2px var(--brown);
+}
+
+.fa-redo-alt{
+    color: var(--gold);
+    display: none !important;
+}
+
+@media screen and (max-width:720px) {
+
+    #newGame{
+        transform: scale(0.8);
+        border-radius: 50%;
+        padding: 6px;
+    }
+
+    
+    .fa-redo-alt{
+        color: var(--gold);
+        display: inline-block !important;
+        font-size:18px;
+      
+    }
+
+    #newGame span {
+        display:none;
+    }
+    
+}
+
+#record {
+    font-family: "Suez One", "Frank Ruhl";
+    font-size: 18px;
+    color: var(--brown);
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 700px){
+        
+    #record {
+        font-size: 16px;
+        }
+    
+}
+
+
+.large {
+    transform: scale(1.1);
+}
+
+.d-none {
+    display: none;
+}
+
+#current-user {
+
+    font-family: "Suez One", "Frank Ruhl";
+    color: var(--brown);
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 3px;
+}
+
+#admin-badge {
+    color: white;
+}
+
+#change-name {
+    font-family: "Suez One", "Frank Ruhl";
+    font-size: 16px;
+    color:var(--brown);
+    background-color: #EACF8A;
+    box-shadow: 1px 1px 2px var(--brown);
+    border-radius: 5%;
+    border-style: none !important;
+    margin-right: 5px;
+}
+
+#change-name:hover {
+    cursor: pointer;
+    box-shadow: 0.5px 0.5px 1px var(--gold);
+}
+
+/* championship widgets*/
+
+#championship {
+    position:absolute;
+    z-index: 1;
+    left: 30px;
+    top:40px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 3px 3px 5px var(--brown);
+    transform: rotate(-30deg) scale(0.9);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-image: url(images/white-laurel.png);
+    background-size: 55px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+
+
+#championship h4 {
+    font-family: "Suez One", "Frank Ruhl";
+    font-size: 16px;
+    color: var(--brown);
+}
+
+#champion {
+ 
+    font-family: "Suez One", "Frank Ruhl";
+    font-size: 14px;
+    color: var(--brown);
+    margin-top: -5px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    #championship {
+        transform: scale(0.7) rotate(-30deg);
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    #championship {
+        bottom: -14vh;
+        left: 30vw;
+        top: auto;
+        transform: rotate(0deg) scale(0.85);
+        border-radius: 10%;
+        padding-top:4px;
+        padding-bottom:4px;
+        background-position: left center;
+        background-repeat: space;
+        
+    }
+
+    #championship h4{
+        padding-top:5px;
+        padding-bottom:8px;
+        margin: 0;
+    }
+}
+
+
+
+.new-champion-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.champion-title{
+    color: var(--gold);
+    z-index: 3;
+    font-family: "Suez One", "Frank Ruhl";
+    text-shadow: 4px 4px white; 
+    position: absolute;
+    max-width: 75vw;
+    right: 30%;
+    font-size: 12px;
+    top: 0;
+    animation:  zoom 1.5s 200ms ease-in forwards;
+}
+
+@media screen and(max-width:600px){
+    .champion-title{
+    animation:  zoom-small 1.5s 200ms ease-in forwards;
+    }
+}
+@keyframes zoom {   
+
+    from{
+        opacity: 0;
+        right: 30%;
+        top: 0;
+        font-size: 12px;
+        transform: rotate(0deg);
+    }
+
+    to{
+        opacity: 1;
+        right: 10%;
+        top: 35%;
+        font-size: 65px;
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes zoom-small {   
+
+    from{
+        opacity: 0;
+        right: 30%;
+        top: 0;
+        font-size: 12px;
+        transform: rotate(0deg);
+    }
+
+    to{
+        opacity: 1;
+        right: 10%;
+        top: 55%;
+        font-size: 30px;
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.new-champion-div {
+    color: var(--gold);
+    z-index: 3;
+    text-align: center;
+    position: absolute;
+    /*right: 50vw;*/
+    font-size: 30px;
+    background-image: url(images/laurel-wreath.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: 200px;
+    height: 2000px;
+    animation:  descendence 1s 1.5ms ease-in forwards;
+}
+
+@media screen and(max-width:600px){
+    .new-champion-div {
+        animation:  descendence-small 1s 1.5ms ease-in forwards;
+    }
+}
+
+
+@keyframes descendence {   
+
+    from{
+        opacity: 0;
+        top: 0;     
+    }
+
+    to{
+        opacity: 1;
+        top: 5%;
+    }
+
+}
+
+@keyframes descendence-small {   
+
+    from{
+        opacity: 0;
+        top: 0;     
+    }
+
+    to{
+        opacity: 1;
+        top: 15%;
+    }
+
+}
+
+/*game over UI*/
+
+#bertha-div {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--gold);
+}
+
+
+#bertha-p {
+    color: var(--brown);
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.5;
+    flex: 1;
+    font-family: "Suez One", "Frank Ruhl";
+    padding: 8px;
+}
+
+#bertha-wrapper {
+    flex: 1;
+}
+
+#bertha {
+    max-width: 450px;
+    max-height: 450px;
+    height: auto;
+    border-radius: 50%;
+    object-fit:contain;
+    flex-shrink:2;
+    
+}
+
+
+@media screen and (max-width:900px){
+    #bertha-div{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #bertha-p{
+        order:2;
+        font-size: 35px;
+    }
+
+    #bertha-wrapper {
+        order: 1;
+    }
+
+    #bertha{
+        max-width: 350px;
+        min-width: 350px;
+    }
+}
+
+@media screen and (max-width:600px){
+
+    #bertha-div{
+        max-height: 100vh;
+        overflow-y: hidden;
+    }
+    
+    #bertha-p{
+        order:2;
+        font-size: 28px;
+    }
+
+    #bertha-wrapper {
+        order: 1;
+    }
+
+    #bertha{
+        max-width: 210px;
+        min-width: 210px;
+    }
+}
+
+
+/* main screen-grid */
+
+/*main 1- game level small*/
+
+.main1 {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 7vw 67vw 26vw;
+    grid-template-rows: repeat(6, minmax(65px, auto));
+    grid-template-areas:
+        "onside2 board1 onside1"
+        "onside2 board1 onside1"
+        "onside2 board1 onside1"
+        "onside2 board1 onside1"
+        "onside2 board1 onside1"
+        "onside2 board1 onside1";
+}
+
+@media screen and (max-width: 1100px)  {
+    .main1{
+        grid-template-columns: 70vw 30vw;
+        grid-template-rows: repeat(6, minmax(65px, auto));
+        grid-template-areas:
+            "board1 onside1"
+            "board1 onside1"
+            "board1 onside1"
+            "board1 onside1"
+            "board1 onside1"
+            "board1 onside1";
+    }
+}
+
+@media screen and (max-width: 900px)  {
+    .main1{
+        grid-template-columns: 100vw;
+        grid-template-rows: 50px 130px 130px 130px;
+        grid-template-areas:
+            "onside1"
+            "board1"
+            "board1"
+            "board1";
+    }
+}
+
+
+#onside1 {
+    grid-area: onside1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 900px)  {
+
+    #onside1{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+    }
+}
+
+.seance-board {
+    position: relative;
+    margin-top: 50px;
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seance-board .messages {
+    background-color: rgba(44,41,36, 0.7);
+    position: absolute;
+    color: white;
+    z-index: 2;
+    bottom: 5%;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 8px auto;
+    padding: 5px 12px;
+    align-self: center;
+    font-family: "Suez One", "Frank Ruhl";
+    text-align: center;
+}
+
+.seance-board img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1000px)  {
+
+    .seance-board {
+        transform: scale(0.85);
+        margin-top: 0;
+
+    }
+
+}
+
+@media screen and (max-width: 900px)  {
+
+    .seance-board {
+       display: none;
+    }
+
+}
+.counter-clock {
+    display: inline-block;
+    min-height:80px;
+}
+
+.counter-clock img {
+    display: inline-block;
+    height:35px;
+    width: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px)  {
+
+    .counter-clock {
+        transform: scale(0.85);
+    }
+}
+
+@media screen and (max-width: 900px)  {
+
+    .counter-clock {
+        min-height:auto;
+    }
+    .counter-clock img {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+}
+
+
+
+.stopwatch {
+    background-image: url("images/clock.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:250px;
+    height:117px;
+    transform: scale(0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stopwatch-view {
+    color: white;
+    font-family: "Suez One", "Frank Ruhl";
+    font-size: 50px;
+    margin: 10px auto;
+}
+
+@media screen and (max-width: 1000px)  {
+
+    .stopwatch {
+        transform: scale(0.5);
+    }
+}
+
+@media screen and (max-width: 700px)  {
+
+    .stopwatch {
+        transform: scale(0.4);
+    }
+}
+
+
+
+#onside2 {
+    grid-area: onside2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#onside2 img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    margin-right: 40px;
+}
+
+@media screen and (max-width: 700px){
+   
+    #onside2 {
+    display:none;
+    }
+}
+
+
+/*1.Board size: Small */
+
+#board1 {
+    width: 70vw;
+    transform: scale(0.95);
+    margin-bottom: 5px;
+    margin-top: -5px;
+    grid-area: board1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    gap: 7px;
+    grid-template-areas:
+        "card1-1 card2-1 card3-1 card4-1"
+        "card5-2 card6-2 card7-2 card8-2"
+        "card9-3 card10-3 card11-3 card12-3";
+    align-items: center;
+    justify-items: center;
+   
+}
+
+@media screen and (max-width: 900px){
+   
+    #board1 {
+    transform: scale(0.9);
+    gap:4px;
+    grid-template-rows: repeat(3, 130px);
+    width: 100vw;
+    margin-top: -8px;
+    }
+}
+
+
+@media screen and (max-width: 520px){
+   
+    #board1 {
+    transform: scale(0.85);
+    gap:4px;
+    grid-template-rows: repeat(3, 135px);
+    }
+}
+
+@media screen and (max-width: 400px){
+   
+    #board1 {
+    transform: scale(0.75);
+    gap:2px;
+    grid-template-rows: repeat(3, 1fr);
+    margin-right: -20px;
+    }
+}
+
+
+.card-place, .cardm-place { 
+    border: 4px solid #E9C551;
+    height: 130px;
+    width: 91px;
+    perspective: 1000px;
+}
+
+@media screen and (max-width: 900px) {
+   
+    .cardm-place {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .card-place {
+        transform: scale(0.9);
+     }
+
+}
+
+
+
+@media screen and (max-width: 520px){
+
+    .card-place, .cardm-place {
+        transform: scale(0.95);
+     }
+
+}
+
+@media screen and (max-width: 400px){
+
+    .card-place, .cardm-place {
+        transform: scale(0.9);
+     }
+
+}
+
+.flip-card-inner, .flip-cardm-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-place .chosen, .cardm-place .chosen {
+  transform: rotateY(180deg);
+}
+
+.card-place .match, .cardm-place .match {
+    display:none;
+}
+
+.flip-card-back img, .flip-cardm-back img {
+    height: 130px;
+    width: 91px;
+}
+
+/*@media screen and (max-width: 520px){
+
+    .flip-card-back img, .flip-cardm-back img {
+        transform: scale(0.75);
+     }
+    }*/
+
+.flip-card-front, .flip-card-back, .flip-cardm-front, .flip-cardm-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front, .flip-cardm-front {
+    background-color: var(--gold);
+    background-image: url(images/backside-image-small.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.flip-card-back, .flip-cardm-back {
+  transform: rotateY(180deg);
+}
+
+/*---Single Cards-placeholders----*/
+
+#card1-1 {
+    grid-area: card1-1;
+}
+
+#card2-1 {
+    grid-area: card2-1;
+}
+
+#card3-1 {
+    grid-area: card3-1;
+}
+
+#card4-1 {
+    grid-area: card4-1;
+}
+
+#card5-2 {
+    grid-area: card5-2;
+}
+
+#card6-2 {
+    grid-area: card6-2;
+}
+
+#card7-2 {
+    grid-area: card7-2;
+}
+
+#card8-2 {
+    grid-area: card8-2;
+}
+
+#card9-3 {
+    grid-area: card9-3;
+}
+
+#card10-3 {
+    grid-area: card10-3;
+}
+
+#card11-3 {
+    grid-area: card11-3;
+}
+
+#card12-3 {
+    grid-area: card12-3;
+}
+
+
+
+/*main 2- game level small*/ 
+
+.main2 {
+    display: grid;
+    grid-template-columns: 78vw 22vw;
+    grid-template-rows: repeat(6, 75px);
+    grid-template-areas:
+        "board2 onside3"
+        "board2 onside3"
+        "board2 onside3"
+        "board2 onside3"
+        "board2 onside3"
+        "board2 onside3";
+}
+
+@media screen and (max-width: 900px)  {
+    .main2{
+        grid-template-columns: 100vw;
+        grid-template-rows: 50px 130px 130px 130px;
+        grid-template-areas:
+            "onside3"
+            "board2"
+            "board2"
+            "board2";
+    }
+}
+
+@media screen and (max-width: 600px)  {
+    .main2{
+        grid-template-columns: 100vw;
+        grid-template-rows: 50px 130px 130px 130px 130px 130px;
+        grid-template-areas:
+            "onside3"
+            "board2"
+            "board2"
+            "board2"
+            "board2"
+            "board2";
+    }
+}
+
+
+.not-selected {
+    display: none;
+}
+
+#onside3 {
+    grid-area: onside3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    
+}
+
+@media screen and (max-width: 900px)  {
+
+    #onside3{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top:5px;
+    }
+}
+
+
+
+#board2  {
+    display: grid;
+    width: 78vw;
+    transform: scale(0.95);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-top: 0;
+    grid-area: board2;
+    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 150px);
+    grid-gap: 2px;
+    grid-template-areas:
+        "cardm1-1 cardm2-1 cardm3-1 cardm4-1 cardm5-1 cardm6-1"
+        "cardm7-2 cardm8-2 cardm9-2 cardm10-2 cardm11-2 cardm12-2"
+        "cardm13-3 cardm14-3 cardm15-3 cardm16-3 cardm17-3 cardm18-3";
+    align-items: center;
+    justify-items: center;
+}
+
+@media screen and (max-width: 900px){
+   
+    #board2 {
+    transform: scale(0.75);
+    gap:4px;
+    grid-template-rows: repeat(3, 130px);
+    width: 100vw;
+    margin-top: -8px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+   
+    #board2 {
+    
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 130px);
+        grid-gap: 2px;
+        grid-template-areas:
+            "cardm1-1 cardm2-1 cardm3-1 cardm4-1"
+            "cardm5-1 cardm6-1 cardm7-2 cardm8-2" 
+            "cardm9-2 cardm10-2 cardm11-2 cardm12-2"
+            "cardm13-3 cardm14-3 cardm15-3 cardm16-3" 
+            ". cardm17-3 cardm18-3 .";
+        transform: scale(0.8);
+    gap:2px;
+    margin-right: -15px;
+    margin-top: -20px;
+    }
+}
+
+/*@media screen and (max-width: 400px){
+   
+    #board2 {
+    transform: scale(0.758);
+    gap:2px;
+    grid-template-rows: repeat(3, 1fr);
+    margin-right: -20px;
+    }
+}*/
+
+/*---Single Cards-placeholders----*/
+#cardm1-1 {
+    grid-area: cardm1-1;
+}
+
+#cardm2-1 {
+    grid-area: cardm2-1;
+}
+
+#cardm3-1 {
+    grid-area: cardm3-1;
+}
+
+#cardm4-1 {
+    grid-area: cardm4-1;
+}
+
+#cardm5-1 {
+    grid-area: cardm5-1;
+}
+
+#cardm6-1 {
+    grid-area: cardm6-1;
+}
+
+#cardm7-2 {
+    grid-area: cardm7-2;
+}
+
+#cardm8-2 {
+    grid-area: cardm8-2;
+}
+
+#cardm9-2 {
+    grid-area: cardm9-2;
+}
+
+#cardm10-2 {
+    grid-area: cardm10-2;
+}
+
+#cardm11-2 {
+    grid-area: cardm11-2;
+}
+
+#cardm12-2 {
+    grid-area: cardm12-2;
+}
+
+#cardm13-3 {
+    grid-area: cardm13-3;
+}
+
+#cardm14-3 {
+    grid-area: cardm14-3;
+}
+
+#cardm15-3 {
+    grid-area: cardm15-3;
+}
+
+#cardm16-3 {
+    grid-area: cardm16-3;
+}
+
+#cardm17-3 {
+    grid-area: cardm17-3;
+}
+
+#cardm18-3 {
+    grid-area: cardm18-3;
+}
+
+/*3.Board size: Large */
+
+/*4. End-Game Screen*/
+
